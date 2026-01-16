@@ -1,12 +1,12 @@
 import {
-  Instagram,
-  Linkedin,
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
   Mail,
+  MailIcon,
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -49,7 +49,7 @@ export const ContactSection = () => {
             </h3>
 
             <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 ">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
                 </div>
@@ -59,7 +59,7 @@ export const ContactSection = () => {
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    nawwaralissa1997@gmail.com
                   </a>
                 </div>
               </div>
@@ -71,9 +71,9 @@ export const ContactSection = () => {
                   <h4 className="font-medium"> Phone</h4>
                   <a
                     href="tel:+11234567890"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground justify-center hover:text-primary transition-colors"
                   >
-                    +1 (123) 456-7890
+                    +963 984695648
                   </a>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                    Syria, Damascus
                   </a>
                 </div>
               </div>
@@ -93,19 +93,48 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
+                <a
+                  href="https://www.linkedin.com/in/nawar-alissa-31175b244"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-primary transition-colors"
+                >
+                  <LinkedinIcon />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter />
+
+                <a
+                  href="https://www.instagram.com/nawar.alissa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="hover:text-primary transition-colors"
+                >
+                  <InstagramIcon />
                 </a>
-                <a href="#" target="_blank">
-                  <Instagram />
+
+                <a
+                  href="https://github.com/Nawar12345678"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:text-primary transition-colors"
+                >
+                  <GithubIcon />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitch />
+
+                <a
+                  href="mailto:nawwaralissa1997@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Gmail"
+                  className="hover:text-primary transition-colors"
+                >
+                  <MailIcon />
                 </a>
+
               </div>
+
             </div>
           </div>
 
@@ -130,7 +159,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  placeholder="Nawar Alissa..."
                 />
               </div>
 

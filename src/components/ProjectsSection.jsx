@@ -3,34 +3,35 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
+    title: "SaaS Landing Page (React Launch)",
     description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
+    image: "/projects/saas.png",
     tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://github.com/Nawar12345678/React-Launch",
+    githubUrl: "https://github.com/Nawar12345678/React-Launch",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Resume Builder",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "web application built with React and Tailwind CSS that helps users create professional resumes easily through a clean and responsive interface.",
+    image: "/projects/resume.PNG",
+    tags: ["React.js", "Tailwind CSS", "lucide react"],
+    demoUrl: "https://github.com/Nawar12345678/Resume-Builder",
+    githubUrl: "https://github.com/Nawar12345678/Resume-Builder",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Villa View",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "web application built with React that displays a list of villas with their details such as images, price, and location.",
+    image: "/projects/villa.PNG",
+    tags: ["React", "react-router", "Bootstrap"],
+    demoUrl: "https://nawar12345678.github.io/villa-task/",
+    githubUrl: "https://github.com/Nawar12345678/villa-task",
   },
 ];
+
 
 export const ProjectsSection = () => {
   return (
@@ -100,7 +101,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/Nawar12345678"
           >
             Check My Github <ArrowRight size={16} />
           </a>
