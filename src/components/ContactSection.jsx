@@ -48,47 +48,55 @@ export const ContactSection = () => {
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4 ">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Email</h4>
-                  <a
-                    href="mailto:hello@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    nawwaralissa1997@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Phone</h4>
-                  <a
-                    href="tel:+11234567890"
-                    className="text-muted-foreground justify-center hover:text-primary transition-colors"
-                  >
-                    +963 984695648
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Syria, Damascus
-                  </a>
-                </div>
-              </div>
-            </div>
+   <div className="space-y-6">
+  {/* Email */}
+  <div className="flex items-start space-x-4">
+    <div className="p-3 rounded-full bg-primary/10">
+      <Mail className="h-6 w-6 text-primary" />
+    </div>
+
+    <div className="text-left" dir="ltr">
+      <h4 className="font-medium">Email</h4>
+      <a
+        href="mailto:nawwaralissa1997@gmail.com"
+        className="text-muted-foreground hover:text-primary transition-colors"
+      >
+        nawwaralissa1997@gmail.com
+      </a>
+    </div>
+  </div>
+
+  {/* Phone */}
+  <div className="flex items-start space-x-4">
+    <div className="p-3 rounded-full bg-primary/10">
+      <Phone className="h-6 w-6 text-primary" />
+    </div>
+
+    <div className="text-left" dir="ltr">
+      <h4 className="font-medium">Phone</h4>
+      <a
+        href="tel:+963984695648"
+        className="text-muted-foreground hover:text-primary transition-colors"
+      >
+        +963 984 695 648
+      </a>
+    </div>
+  </div>
+
+  {/* Location */}
+  <div className="flex items-start space-x-4">
+    <div className="p-3 rounded-full bg-primary/10">
+      <MapPin className="h-6 w-6 text-primary" />
+    </div>
+
+    <div className="text-left" dir="ltr">
+      <h4 className="font-medium">Location</h4>
+      <span className="text-muted-foreground">
+        Syria, Damascus
+      </span>
+    </div>
+  </div>
+</div>
 
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>

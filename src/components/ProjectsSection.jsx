@@ -1,11 +1,14 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import saasImg from "../assets/saas.PNG";
+import resumeImg from "../assets/resume.PNG";
+import villaImg from "../assets/villa.PNG";
 
 const projects = [
   {
     id: 1,
     title: "SaaS Landing Page (React Launch)",
     description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/saas.png",
+    image: saasImg,
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "https://github.com/Nawar12345678/React-Launch",
     githubUrl: "https://github.com/Nawar12345678/React-Launch",
@@ -15,7 +18,7 @@ const projects = [
     title: "Resume Builder",
     description:
       "web application built with React and Tailwind CSS that helps users create professional resumes easily through a clean and responsive interface.",
-    image: "/projects/resume.PNG",
+    image: resumeImg,
     tags: ["React.js", "Tailwind CSS", "lucide react"],
     demoUrl: "https://github.com/Nawar12345678/Resume-Builder",
     githubUrl: "https://github.com/Nawar12345678/Resume-Builder",
@@ -25,7 +28,7 @@ const projects = [
     title: "Villa View",
     description:
       "web application built with React that displays a list of villas with their details such as images, price, and location.",
-    image: "/projects/villa.PNG",
+    image: villaImg,
     tags: ["React", "react-router", "Bootstrap"],
     demoUrl: "https://nawar12345678.github.io/villa-task/",
     githubUrl: "https://github.com/Nawar12345678/villa-task",
