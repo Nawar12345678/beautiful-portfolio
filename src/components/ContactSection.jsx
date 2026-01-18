@@ -1,11 +1,9 @@
 import {
   GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  Mail,
   MailIcon,
   MapPin,
   Phone,
+  Mail,
   Send,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -46,17 +44,27 @@ export const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold">Contact Information</h3>
+            <h3 className="text-2xl font-semibold text-left">
+              Contact Information
+            </h3>
 
             <div className="space-y-6">
               <InfoItem icon={<Mail />} title="Email">
-                <a href="mailto:nawwaralissa1997@gmail.com">
+                <a
+                  href="mailto:nawwaralissa1997@gmail.com"
+                  className="block hover:text-primary transition-colors"
+                >
                   nawwaralissa1997@gmail.com
                 </a>
               </InfoItem>
 
               <InfoItem icon={<Phone />} title="Phone">
-                <a href="tel:+963984695648">+963 984 695 648</a>
+                <a
+                  href="tel:+963984695648"
+                  className="block hover:text-primary transition-colors"
+                >
+                  +963 984 695 648
+                </a>
               </InfoItem>
 
               <InfoItem icon={<MapPin />} title="Location">
@@ -65,17 +73,15 @@ export const ContactSection = () => {
             </div>
 
             <div>
-              <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <SocialLink href="https://www.linkedin.com/in/nawar-alissa-31175b244">
-                  <LinkedinIcon />
-                </SocialLink>
-                <SocialLink href="https://www.instagram.com/nawar.alissa/">
-                  <InstagramIcon />
-                </SocialLink>
+              <h4 className="font-medium mb-4 text-left">
+                Connect With Me
+              </h4>
+
+              <div className="flex space-x-4 justify-start">
                 <SocialLink href="https://github.com/Nawar12345678">
                   <GithubIcon />
                 </SocialLink>
+
                 <SocialLink href="mailto:nawwaralissa1997@gmail.com">
                   <MailIcon />
                 </SocialLink>
@@ -85,17 +91,25 @@ export const ContactSection = () => {
 
           {/* Form */}
           <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Send a Message
+            </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <Input label="Your Name" placeholder="Nawar Alissa..." />
-              <Input label="Your Email" type="email" placeholder="john@gmail.com" />
+              <Input
+                label="Your Email"
+                type="email"
+                placeholder="john@gmail.com"
+              />
               <Textarea label="Your Message" />
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={cn("cosmic-button w-full flex items-center justify-center gap-2")}
+                className={cn(
+                  "cosmic-button w-full flex items-center justify-center gap-2"
+                )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
@@ -108,16 +122,19 @@ export const ContactSection = () => {
   );
 };
 
-/* Helpers */
+/* ================== Helpers ================== */
 
 const InfoItem = ({ icon, title, children }) => (
-  <div className="flex items-start space-x-4">
-    <div className="p-3 rounded-full bg-primary/10 text-primary">
+  <div className="flex items-start gap-4 text-left">
+    <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
       {icon}
     </div>
-    <div>
+
+    <div className="flex-1">
       <h4 className="font-medium">{title}</h4>
-      <div className="text-muted-foreground">{children}</div>
+      <div className="text-muted-foreground break-all">
+        {children}
+      </div>
     </div>
   </div>
 );
@@ -135,7 +152,9 @@ const SocialLink = ({ href, children }) => (
 
 const Input = ({ label, type = "text", placeholder }) => (
   <div>
-    <label className="block text-sm font-medium mb-2">{label}</label>
+    <label className="block text-sm font-medium mb-2">
+      {label}
+    </label>
     <input
       type={type}
       required
@@ -147,12 +166,14 @@ const Input = ({ label, type = "text", placeholder }) => (
 
 const Textarea = ({ label }) => (
   <div>
-    <label className="block text-sm font-medium mb-2">{label}</label>
+    <label className="block text-sm font-medium mb-2">
+      {label}
+    </label>
     <textarea
       required
       rows={4}
-      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
       placeholder="Hello, I'd like to talk about..."
+      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
     />
   </div>
 );
