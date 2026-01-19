@@ -3,6 +3,51 @@ import { Briefcase, Code, Building2 } from "lucide-react";
 const experiences = [
     {
         id: 1,
+        role: "Front-End Developer ",
+        company: "Freelancer",
+        location: "Remote",
+        period: "Present",
+        icon: <Building2 className="h-6 w-6 text-primary" />,
+        responsibilities: [
+            "Developed interactive web pages using HTML, CSS, and JavaScript",
+            "Built reusable components with React",
+            "Integrated RESTful and GraphQL APIs for dynamic data handling",
+            "Ensured compliance with company policies and internal standards",
+            "Maintained clean, scalable, and maintainable codebases",
+        ],
+    },
+    {
+        id: 2,
+        role: "Front-End Developer",
+        company: "Osous Technology",
+        location: "Remote",
+        period: "June 2024 - October 2025",
+        icon: <Briefcase className="h-6 w-6 text-primary" />,
+        responsibilities: [
+            "Built responsive and interactive user interfaces",
+            "Converted UI/UX designs into clean front-end code",
+            "Optimized website performance and loading speed",
+            "Collaborated closely with the development team",
+            "Delivered high-quality solutions with strong technical and communication skills",
+        ],
+    },
+    {
+        id: 3,
+        role: "Front-End Developer ",
+        company: "Business Flow",
+        location: "Remote",
+        period: "March 2024 - June 2024",
+        icon: <Building2 className="h-6 w-6 text-primary" />,
+        responsibilities: [
+            "Developed interactive web pages using HTML, CSS, and JavaScript",
+            "Built reusable components with React",
+            "Integrated RESTful and GraphQL APIs for dynamic data handling",
+            "Ensured compliance with company policies and internal standards",
+            "Maintained clean, scalable, and maintainable codebases",
+        ],
+    },
+    {
+        id: 4,
         role: "Full Stack Developer (Internship)",
         company: "Focal X Agency",
         location: "Remote",
@@ -18,51 +63,9 @@ const experiences = [
         ],
 
     },
-    {
-        id: 2,
-        role: "Front-End Developer ",
-        company: "Business Flow",
-        location: "Remote",
-        period: "March 2024 - June 2024",
-        icon: <Building2 className="h-6 w-6 text-primary" />,
-        responsibilities: [
-            "Developed interactive web pages using HTML, CSS, and JavaScript",
-            "Built reusable components with React, Vue, and Angular",
-            "Integrated RESTful and GraphQL APIs for dynamic data handling",
-            "Ensured compliance with company policies and internal standards",
-            "Maintained clean, scalable, and maintainable codebases",
-        ],
-    },
-    {
-        id: 3,
-        role: "Front-End Developer",
-        company: "Osous Technology",
-        location: "Remote",
-        period: "June 2024 - October 2025",
-        icon: <Briefcase className="h-6 w-6 text-primary" />,
-        responsibilities: [
-            "Built responsive and interactive user interfaces",
-            "Converted UI/UX designs into clean front-end code",
-            "Optimized website performance and loading speed",
-            "Collaborated closely with the development team",
-            "Delivered high-quality solutions with strong technical and communication skills",
-        ],
-    },
-    {
-        id: 4,
-        role: "Front-End Developer ",
-        company: "Freelancer",
-        location: "Remote",
-        period: "Present",
-        icon: <Building2 className="h-6 w-6 text-primary" />,
-        responsibilities: [
-            "Developed interactive web pages using HTML, CSS, and JavaScript",
-            "Built reusable components with React",
-            "Integrated RESTful and GraphQL APIs for dynamic data handling",
-            "Ensured compliance with company policies and internal standards",
-            "Maintained clean, scalable, and maintainable codebases",
-        ],
-    },
+
+
+
 
 ];
 
