@@ -63,7 +63,36 @@
     "titleHighlight": "Experience",
     "present": "Present",
     "locationRemote": "Remote",
+    "latest": "Latest",
     "items": {
+      "rzain": {
+        "role": "Frontend Developer",
+        "company": "Rzain",
+        "period": "3 Months",
+        "responsibilities": [
+          "Worked on Supply Management systems",
+          "Worked on Maintenance systems",
+          "Worked on Accounting systems",
+          "Worked on Recruitment systems",
+          "Built and improved frontend interfaces using Vue.js",
+          "Integrated APIs and tested endpoints using Postman",
+          "Collaborated with the team and managed tasks using Trello",
+          "Used Cursor AI to improve development workflow and productivity",
+          "Designed workflow-based interfaces, forms, dialogs, and data tables",
+          "Improved UI/UX and overall application structure"
+        ],
+        "technologies": [
+          "Vue.js",
+          "Postman",
+          "Trello",
+          "Cursor AI",
+          "Workflow Systems",
+          "Maintenance Systems",
+          "Accounting Systems",
+          "Recruitment Systems",
+          "Supply Systems"
+        ]
+      },
       "freelancer": {
         "role": "Front-End Developer",
         "company": "Freelancer",
@@ -74,7 +103,8 @@
           "Integrated RESTful and GraphQL APIs for dynamic data handling",
           "Ensured compliance with company policies and internal standards",
           "Maintained clean, scalable, and maintainable codebases"
-        ]
+        ],
+        "technologies": ["React", "Tailwind CSS", "REST API", "GraphQL", "JavaScript"]
       },
       "osous": {
         "role": "Front-End Developer",
@@ -86,7 +116,8 @@
           "Optimized website performance and loading speed",
           "Collaborated closely with the development team",
           "Delivered high-quality solutions with strong technical and communication skills"
-        ]
+        ],
+        "technologies": ["React", "Tailwind CSS", "TypeScript", "Figma", "REST API"]
       },
       "businessFlow": {
         "role": "Front-End Developer",
@@ -98,7 +129,8 @@
           "Integrated RESTful and GraphQL APIs for dynamic data handling",
           "Ensured compliance with company policies and internal standards",
           "Maintained clean, scalable, and maintainable codebases"
-        ]
+        ],
+        "technologies": ["React", "JavaScript", "REST API", "GraphQL"]
       },
       "focalX": {
         "role": "Full Stack Developer (Internship)",
@@ -111,7 +143,8 @@
           "Integrated RESTful and GraphQL APIs to handle dynamic data efficiently",
           "Optimized performance, accessibility, and SEO best practices across projects",
           "Maintained clean, well-documented, and maintainable codebases for long-term scalability"
-        ]
+        ],
+        "technologies": ["React", "Tailwind CSS", "REST API", "GraphQL", "Node.js"]
       }
     }
   },
@@ -123,11 +156,19 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Tools",
-      "uiFrameworks": "UI Frameworks"
+      "uiFrameworks": "UI Frameworks",
+      "domains": "Business Domains"
     },
     "levels": {
       "intermediate": "Intermediate",
       "advanced": "Advanced"
+    },
+    "names": {
+      "workflowSystems": "Workflow Systems",
+      "maintenanceSystems": "Maintenance Systems",
+      "supplyChainSystems": "Supply Chain Systems",
+      "accountingSystems": "Accounting Systems",
+      "recruitmentSystems": "Recruitment Systems"
     },
     "empty": "No skills found for this category."
   },
