@@ -1,27 +1,32 @@
 import { ArrowUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
-  // دالة للسحب للعنصر الهدف بسلاسة
+  const { t } = useTranslation();
+
   const scrollToHero = () => {
-    const hero = document.getElementById("hero");
-    if (hero) {
-      hero.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer className="py-12 px-4 bg-card relative border-t border-border mt-12 pt-8 flex flex-wrap justify-between items-center">
-      <p className="text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} Nawar Alissa All rights reserved.
-      </p>
+    <footer className="py-10 px-4 bg-card relative border-t border-border/60 mt-8">
+      <div className="container flex flex-col sm:flex-row flex-wrap justify-between items-center gap-6">
+        <div className="text-center sm:text-start space-y-1">
+          <p className="text-sm text-muted-foreground">
+            {t("footer.rights", { year: new Date().getFullYear() })}
+          </p>
+          <p className="text-xs text-muted-foreground/70">{t("footer.builtWith")}</p>
+        </div>
 
-      <button
-        onClick={scrollToHero}
-        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp size={20} />
-      </button>
+        <button
+          type="button"
+          onClick={scrollToHero}
+          className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+          aria-label={t("common.scrollToTop")}
+        >
+          <ArrowUp size={20} />
+        </button>
+      </div>
     </footer>
   );
 };

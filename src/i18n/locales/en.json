@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "title": "Nawar Alissa Portfolio",
+    "description": "Front-End Developer crafting modern, elegant web experiences."
+  },
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "arabic": "العربية",
+    "switchLanguage": "Switch language",
+    "scrollToTop": "Scroll to top",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "loading": "Loading...",
+    "comingSoon": "Coming soon",
+    "noResults": "No results found",
+    "emptyState": "Nothing to show here yet"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brandPrefix": "Nawar",
+    "brandSuffix": "Portfolio"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "firstName": "Nawar",
+    "lastName": "Alissa",
+    "tagline": "I craft stellar web experiences with modern technologies. Specializing in front-end development, I build interfaces that are both beautiful and functional.",
+    "viewWork": "View My Work",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "titlePrefix": "About",
+    "titleHighlight": "Me",
+    "subtitle": "Passionate Web Developer & Tech Creator",
+    "paragraph1": "With over 3 years of experience in web development, I specialize in creating responsive, accessible, and performant web applications using modern technologies like React, Tailwind CSS, and Next.js.",
+    "paragraph2": "I'm passionate about crafting elegant solutions to complex problems, and I'm constantly learning new technologies to stay at the forefront of the ever-evolving web landscape.",
+    "getInTouch": "Get In Touch",
+    "downloadCV": "Download CV",
+    "cards": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Building responsive web applications with modern frameworks."
+      },
+      "uiux": {
+        "title": "UI / UX Design",
+        "description": "Designing intuitive interfaces and seamless experiences."
+      },
+      "projectManagement": {
+        "title": "Project Management",
+        "description": "Leading projects with agile methodologies and best practices."
+      }
+    }
+  },
+  "experience": {
+    "titlePrefix": "Work",
+    "titleHighlight": "Experience",
+    "present": "Present",
+    "locationRemote": "Remote",
+    "items": {
+      "freelancer": {
+        "role": "Front-End Developer",
+        "company": "Freelancer",
+        "period": "Present",
+        "responsibilities": [
+          "Developed interactive web pages using HTML, CSS, and JavaScript",
+          "Built reusable components with React",
+          "Integrated RESTful and GraphQL APIs for dynamic data handling",
+          "Ensured compliance with company policies and internal standards",
+          "Maintained clean, scalable, and maintainable codebases"
+        ]
+      },
+      "osous": {
+        "role": "Front-End Developer",
+        "company": "Osous Technology",
+        "period": "June 2024 – October 2025",
+        "responsibilities": [
+          "Built responsive and interactive user interfaces",
+          "Converted UI/UX designs into clean front-end code",
+          "Optimized website performance and loading speed",
+          "Collaborated closely with the development team",
+          "Delivered high-quality solutions with strong technical and communication skills"
+        ]
+      },
+      "businessFlow": {
+        "role": "Front-End Developer",
+        "company": "Business Flow",
+        "period": "March 2024 – June 2024",
+        "responsibilities": [
+          "Developed interactive web pages using HTML, CSS, and JavaScript",
+          "Built reusable components with React",
+          "Integrated RESTful and GraphQL APIs for dynamic data handling",
+          "Ensured compliance with company policies and internal standards",
+          "Maintained clean, scalable, and maintainable codebases"
+        ]
+      },
+      "focalX": {
+        "role": "Full Stack Developer (Internship)",
+        "company": "Focal X Agency",
+        "period": "February 2024 – July 2024",
+        "responsibilities": [
+          "Designed and developed modern, responsive web applications tailored to client requirements",
+          "Built scalable and reusable front-end components using React and modern JavaScript frameworks",
+          "Collaborated directly with clients to gather requirements, provide technical guidance, and deliver solutions",
+          "Integrated RESTful and GraphQL APIs to handle dynamic data efficiently",
+          "Optimized performance, accessibility, and SEO best practices across projects",
+          "Maintained clean, well-documented, and maintainable codebases for long-term scalability"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "titlePrefix": "My",
+    "titleHighlight": "Skills",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools",
+      "uiFrameworks": "UI Frameworks"
+    },
+    "levels": {
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "empty": "No skills found for this category."
+  },
+  "projects": {
+    "titlePrefix": "Featured",
+    "titleHighlight": "Projects",
+    "subtitle": "A selection of recent projects, carefully crafted with attention to performance and user experience.",
+    "viewDemo": "Live demo",
+    "viewCode": "Source code",
+    "checkGithub": "Check My Github",
+    "items": {
+      "saas": {
+        "title": "SaaS Landing Page (React Launch)",
+        "description": "A beautiful, conversion-focused landing page built with React and Tailwind CSS."
+      },
+      "resume": {
+        "title": "Resume Builder",
+        "description": "A web application built with React and Tailwind CSS that helps users craft professional resumes through a clean, responsive interface."
+      },
+      "villa": {
+        "title": "Villa View",
+        "description": "A React application that showcases villas with rich imagery, pricing, and location details."
+      }
+    }
+  },
+  "contact": {
+    "titlePrefix": "Get In",
+    "titleHighlight": "Touch",
+    "subtitle": "Have a project in mind or want to collaborate? Feel free to reach out.",
+    "infoTitle": "Contact Information",
+    "connectTitle": "Connect With Me",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "values": {
+      "location": "Damascus, Syria"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Your Name",
+      "namePlaceholder": "Nawar Alissa...",
+      "email": "Your Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Your Message",
+      "messagePlaceholder": "Hello, I'd like to talk about...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "validation": {
+        "required": "This field is required",
+        "invalidEmail": "Please enter a valid email address",
+        "messageTooShort": "Message must be at least 10 characters"
+      },
+      "success": {
+        "title": "Message sent!",
+        "description": "Thank you for your message. I'll get back to you soon."
+      },
+      "error": {
+        "title": "Something went wrong",
+        "description": "Please review the form and try again."
+      }
+    }
+  },
+  "footer": {
+    "rights": "© {{year}} Nawar Alissa. All rights reserved.",
+    "builtWith": "Crafted with React, Tailwind & care."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "subtitle": "The page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  }
+}

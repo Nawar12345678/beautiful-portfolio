@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   GithubIcon,
   MailIcon,
@@ -5,114 +6,179 @@ import {
   Phone,
   Mail,
   Send,
+  Loader2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+const initialForm = { name: "", email: "", message: "" };
 
 export const ContactSection = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const nextErrors = {};
+
+    if (!form.name.trim()) {
+      nextErrors.name = t("contact.form.validation.required");
+    }
+    if (!form.email.trim()) {
+      nextErrors.email = t("contact.form.validation.required");
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      nextErrors.email = t("contact.form.validation.invalidEmail");
+    }
+    if (!form.message.trim()) {
+      nextErrors.message = t("contact.form.validation.required");
+    } else if (form.message.trim().length < 10) {
+      nextErrors.message = t("contact.form.validation.messageTooShort");
+    }
+
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const handleChange = (field) => (e) => {
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }));
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) {
+      toast({
+        variant: "destructive",
+        title: t("contact.form.error.title"),
+        description: t("contact.form.error.description"),
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: t("contact.form.success.title"),
+        description: t("contact.form.success.description"),
       });
+      setForm(initialForm);
+      setErrors({});
       setIsSubmitting(false);
     }, 1500);
   };
 
   return (
-    <section
-      id="contact"
-      className="py-24 px-4 relative bg-secondary/30 scroll-mt-24"
-    >
+    <section id="contact" className="section-padding bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary">Touch</span>
+        <h2 className="section-title">
+          {t("contact.titlePrefix")}{" "}
+          <span className="text-primary">{t("contact.titleHighlight")}</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-        </p>
+        <p className="section-subtitle">{t("contact.subtitle")}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-left">
-              Contact Information
-            </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="space-y-8 text-start">
+            <h3 className="text-2xl font-semibold">{t("contact.infoTitle")}</h3>
 
             <div className="space-y-6">
-              <InfoItem icon={<Mail />} title="Email">
+              <InfoItem icon={<Mail className="h-5 w-5" />} title={t("contact.labels.email")}>
                 <a
                   href="mailto:nawwaralissa1997@gmail.com"
-                  className="block hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   nawwaralissa1997@gmail.com
                 </a>
               </InfoItem>
 
-              <InfoItem icon={<Phone />} title="Phone">
+              <InfoItem icon={<Phone className="h-5 w-5" />} title={t("contact.labels.phone")}>
                 <a
                   href="tel:+963984695648"
-                  className="block hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors"
+                  dir="ltr"
                 >
                   +963 984 695 648
                 </a>
               </InfoItem>
 
-              <InfoItem icon={<MapPin />} title="Location">
-                Syria, Damascus
+              <InfoItem icon={<MapPin className="h-5 w-5" />} title={t("contact.labels.location")}>
+                {t("contact.values.location")}
               </InfoItem>
             </div>
 
             <div>
-              <h4 className="font-medium mb-4 text-left">
-                Connect With Me
-              </h4>
-
-              <div className="flex space-x-4 justify-start">
-                <SocialLink href="https://github.com/Nawar12345678">
-                  <GithubIcon />
+              <h4 className="font-medium mb-4">{t("contact.connectTitle")}</h4>
+              <div className="flex items-center gap-4">
+                <SocialLink href="https://github.com/Nawar12345678" label="GitHub">
+                  <GithubIcon className="h-5 w-5" />
                 </SocialLink>
-
-                <SocialLink href="mailto:nawwaralissa1997@gmail.com">
-                  <MailIcon />
+                <SocialLink href="mailto:nawwaralissa1997@gmail.com" label="Email">
+                  <MailIcon className="h-5 w-5" />
                 </SocialLink>
               </div>
             </div>
           </div>
 
-          {/* Form */}
-          <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">
-              Send a Message
+          <div className="glass-panel p-8 rounded-2xl">
+            <h3 className="text-2xl font-semibold mb-6 text-start">
+              {t("contact.form.title")}
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <Input label="Your Name" placeholder="Nawar Alissa..." />
-              <Input
-                label="Your Email"
-                type="email"
-                placeholder="john@gmail.com"
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+              <FormField
+                id="contact-name"
+                label={t("contact.form.name")}
+                value={form.name}
+                onChange={handleChange("name")}
+                placeholder={t("contact.form.namePlaceholder")}
+                error={errors.name}
               />
-              <Textarea label="Your Message" />
+              <FormField
+                id="contact-email"
+                label={t("contact.form.email")}
+                type="email"
+                value={form.email}
+                onChange={handleChange("email")}
+                placeholder={t("contact.form.emailPlaceholder")}
+                error={errors.email}
+                dir="ltr"
+              />
+              <FormField
+                id="contact-message"
+                label={t("contact.form.message")}
+                as="textarea"
+                value={form.message}
+                onChange={handleChange("message")}
+                placeholder={t("contact.form.messagePlaceholder")}
+                error={errors.message}
+              />
 
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "cosmic-button w-full",
+                  isSubmitting && "opacity-80 pointer-events-none"
                 )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    {t("contact.form.sending")}
+                  </>
+                ) : (
+                  <>
+                    {t("contact.form.send")}
+                    <Send size={16} className="rtl:rotate-180" />
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -122,58 +188,65 @@ export const ContactSection = () => {
   );
 };
 
-/* ================== Helpers ================== */
-
 const InfoItem = ({ icon, title, children }) => (
-  <div className="flex items-start gap-4 text-left">
-    <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
-      {icon}
-    </div>
-
-    <div className="flex-1">
-      <h4 className="font-medium">{title}</h4>
-      <div className="text-muted-foreground break-all">
-        {children}
-      </div>
+  <div className="flex items-start gap-4">
+    <div className="p-3 rounded-2xl bg-primary/10 text-primary shrink-0">{icon}</div>
+    <div className="flex-1 min-w-0">
+      <h4 className="font-medium mb-0.5">{title}</h4>
+      <div className="text-muted-foreground break-all text-sm">{children}</div>
     </div>
   </div>
 );
 
-const SocialLink = ({ href, children }) => (
+const SocialLink = ({ href, label, children }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:text-primary transition-colors"
+    aria-label={label}
+    className="p-3 rounded-xl border border-border/60 bg-card hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-300"
   >
     {children}
   </a>
 );
 
-const Input = ({ label, type = "text", placeholder }) => (
-  <div>
-    <label className="block text-sm font-medium mb-2">
-      {label}
-    </label>
-    <input
-      type={type}
-      required
-      placeholder={placeholder}
-      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-    />
-  </div>
-);
+const FormField = ({
+  id,
+  label,
+  type = "text",
+  as,
+  value,
+  onChange,
+  placeholder,
+  error,
+  dir,
+}) => {
+  const sharedProps = {
+    id,
+    value,
+    onChange,
+    placeholder,
+    dir,
+    "aria-invalid": !!error,
+    "aria-describedby": error ? `${id}-error` : undefined,
+    className: cn("input-field", error && "border-destructive/60 focus:ring-destructive/40"),
+  };
 
-const Textarea = ({ label }) => (
-  <div>
-    <label className="block text-sm font-medium mb-2">
-      {label}
-    </label>
-    <textarea
-      required
-      rows={4}
-      placeholder="Hello, I'd like to talk about..."
-      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-    />
-  </div>
-);
+  return (
+    <div className="text-start">
+      <label htmlFor={id} className="block text-sm font-medium mb-2">
+        {label}
+      </label>
+      {as === "textarea" ? (
+        <textarea {...sharedProps} rows={4} className={cn(sharedProps.className, "resize-none")} />
+      ) : (
+        <input type={type} {...sharedProps} />
+      )}
+      {error && (
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-destructive" role="alert">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+};
